@@ -64,6 +64,9 @@ public class LuaRunner : BaseRunner
 #if UNITY_WEBGL && !UNITY_EDITOR
         path = GetURL();
 #endif
+#if UNITY_ANDROID && !UNITY_EDITOR
+        path = "jar:file://" + Application.dataPath + "!/assets/SampleLuaGame.pv8";
+#endif
 
         // Use this to load a .pv8 file directly from the filesystem or from a url
         LoadFromZip(path);
